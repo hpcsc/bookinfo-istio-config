@@ -2263,8 +2263,8 @@
                         "typedPerFilterConfig": {
                             "envoy.fault": {
                                 "@type": "type.googleapis.com/envoy.config.filter.http.fault.v2.HTTPFault",
-                                "delay": {
-                                    "fixedDelay": "7s",
+                                "abort": {
+                                    "httpStatus": 500,
                                     "percentage": {
                                         "numerator": 1000000,
                                         "denominator": "MILLION"
@@ -3409,8 +3409,8 @@
                         "typedPerFilterConfig": {
                             "envoy.fault": {
                                 "@type": "type.googleapis.com/envoy.config.filter.http.fault.v2.HTTPFault",
-                                "delay": {
-                                    "fixedDelay": "7s",
+                                "abort": {
+                                    "httpStatus": 500,
                                     "percentage": {
                                         "numerator": 1000000,
                                         "denominator": "MILLION"

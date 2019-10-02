@@ -21,14 +21,14 @@
                         "name": "rq_error"
                     },
                     {
-                        "value": "230",
+                        "value": "239",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "230",
+                        "value": "239",
                         "name": "rq_total"
                     },
                     {
@@ -1673,11 +1673,11 @@
                         "name": "cx_connect_fail"
                     },
                     {
-                        "value": "2",
+                        "value": "3",
                         "name": "cx_total"
                     },
                     {
-                        "value": "1",
+                        "value": "2",
                         "name": "rq_error"
                     },
                     {
@@ -1687,7 +1687,7 @@
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "2",
+                        "value": "3",
                         "name": "rq_total"
                     },
                     {
