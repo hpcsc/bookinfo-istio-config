@@ -55,6 +55,13 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/details"
+                }
+            }
         }
     },
     {
@@ -84,6 +91,58 @@
             "thresholds": [
                 {}
             ]
+        }
+    },
+    {
+        "name": "outbound|9080|v1|details.default.svc.cluster.local",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {},
+                "initialFetchTimeout": "0s"
+            },
+            "serviceName": "outbound|9080|v1|details.default.svc.cluster.local"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/details"
+                }
+            }
+        }
+    },
+    {
+        "name": "outbound|9080|v2|details.default.svc.cluster.local",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {},
+                "initialFetchTimeout": "0s"
+            },
+            "serviceName": "outbound|9080|v2|details.default.svc.cluster.local"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/details"
+                }
+            }
         }
     },
     {
@@ -988,6 +1047,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/productpage"
+                }
+            }
+        }
+    },
+    {
+        "name": "outbound|9080|v1|productpage.default.svc.cluster.local",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {},
+                "initialFetchTimeout": "0s"
+            },
+            "serviceName": "outbound|9080|v1|productpage.default.svc.cluster.local"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/productpage"
+                }
+            }
         }
     },
     {
@@ -1039,6 +1131,117 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/ratings"
+                }
+            }
+        }
+    },
+    {
+        "name": "outbound|9080|v1|ratings.default.svc.cluster.local",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {},
+                "initialFetchTimeout": "0s"
+            },
+            "serviceName": "outbound|9080|v1|ratings.default.svc.cluster.local"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/ratings"
+                }
+            }
+        }
+    },
+    {
+        "name": "outbound|9080|v2|ratings.default.svc.cluster.local",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {},
+                "initialFetchTimeout": "0s"
+            },
+            "serviceName": "outbound|9080|v2|ratings.default.svc.cluster.local"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/ratings"
+                }
+            }
+        }
+    },
+    {
+        "name": "outbound|9080|v2-mysql|ratings.default.svc.cluster.local",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {},
+                "initialFetchTimeout": "0s"
+            },
+            "serviceName": "outbound|9080|v2-mysql|ratings.default.svc.cluster.local"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/ratings"
+                }
+            }
+        }
+    },
+    {
+        "name": "outbound|9080|v2-mysql-vm|ratings.default.svc.cluster.local",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {},
+                "initialFetchTimeout": "0s"
+            },
+            "serviceName": "outbound|9080|v2-mysql-vm|ratings.default.svc.cluster.local"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/ratings"
+                }
+            }
         }
     },
     {
@@ -1058,6 +1261,91 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/reviews"
+                }
+            }
+        }
+    },
+    {
+        "name": "outbound|9080|v1|reviews.default.svc.cluster.local",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {},
+                "initialFetchTimeout": "0s"
+            },
+            "serviceName": "outbound|9080|v1|reviews.default.svc.cluster.local"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/reviews"
+                }
+            }
+        }
+    },
+    {
+        "name": "outbound|9080|v2|reviews.default.svc.cluster.local",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {},
+                "initialFetchTimeout": "0s"
+            },
+            "serviceName": "outbound|9080|v2|reviews.default.svc.cluster.local"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/reviews"
+                }
+            }
+        }
+    },
+    {
+        "name": "outbound|9080|v3|reviews.default.svc.cluster.local",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {},
+                "initialFetchTimeout": "0s"
+            },
+            "serviceName": "outbound|9080|v3|reviews.default.svc.cluster.local"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/reviews"
+                }
+            }
         }
     },
     {

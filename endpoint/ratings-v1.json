@@ -21,14 +21,14 @@
                         "name": "rq_error"
                     },
                     {
-                        "value": "160",
+                        "value": "190",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "160",
+                        "value": "190",
                         "name": "rq_total"
                     },
                     {
@@ -187,6 +187,144 @@
         ]
     },
     {
+        "name": "outbound|9080||productpage.default.svc.cluster.local",
+        "addedViaApi": true,
+        "hostStatuses": [
+            {
+                "address": {
+                    "socketAddress": {
+                        "address": "10.244.1.85",
+                        "portValue": 9080
+                    }
+                },
+                "stats": [
+                    {
+                        "name": "cx_connect_fail"
+                    },
+                    {
+                        "name": "cx_total"
+                    },
+                    {
+                        "name": "rq_error"
+                    },
+                    {
+                        "name": "rq_success"
+                    },
+                    {
+                        "name": "rq_timeout"
+                    },
+                    {
+                        "name": "rq_total"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "cx_active"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "rq_active"
+                    }
+                ],
+                "healthStatus": {
+                    "edsHealthStatus": "HEALTHY"
+                },
+                "weight": 1
+            }
+        ]
+    },
+    {
+        "name": "outbound|9080||details.default.svc.cluster.local",
+        "addedViaApi": true,
+        "hostStatuses": [
+            {
+                "address": {
+                    "socketAddress": {
+                        "address": "10.244.2.79",
+                        "portValue": 9080
+                    }
+                },
+                "stats": [
+                    {
+                        "name": "cx_connect_fail"
+                    },
+                    {
+                        "name": "cx_total"
+                    },
+                    {
+                        "name": "rq_error"
+                    },
+                    {
+                        "name": "rq_success"
+                    },
+                    {
+                        "name": "rq_timeout"
+                    },
+                    {
+                        "name": "rq_total"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "cx_active"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "rq_active"
+                    }
+                ],
+                "healthStatus": {
+                    "edsHealthStatus": "HEALTHY"
+                },
+                "weight": 1
+            }
+        ]
+    },
+    {
+        "name": "outbound|9080|v2|reviews.default.svc.cluster.local",
+        "addedViaApi": true,
+        "hostStatuses": [
+            {
+                "address": {
+                    "socketAddress": {
+                        "address": "10.244.2.81",
+                        "portValue": 9080
+                    }
+                },
+                "stats": [
+                    {
+                        "name": "cx_connect_fail"
+                    },
+                    {
+                        "name": "cx_total"
+                    },
+                    {
+                        "name": "rq_error"
+                    },
+                    {
+                        "name": "rq_success"
+                    },
+                    {
+                        "name": "rq_timeout"
+                    },
+                    {
+                        "name": "rq_total"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "cx_active"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "rq_active"
+                    }
+                ],
+                "healthStatus": {
+                    "edsHealthStatus": "HEALTHY"
+                },
+                "weight": 1
+            }
+        ]
+    },
+    {
         "name": "outbound|9091||istio-policy.istio-system.svc.cluster.local",
         "addedViaApi": true,
         "hostStatuses": [
@@ -279,13 +417,59 @@
         ]
     },
     {
-        "name": "outbound|9080||details.default.svc.cluster.local",
+        "name": "outbound|9080|v1|reviews.default.svc.cluster.local",
         "addedViaApi": true,
         "hostStatuses": [
             {
                 "address": {
                     "socketAddress": {
-                        "address": "10.244.2.79",
+                        "address": "10.244.1.83",
+                        "portValue": 9080
+                    }
+                },
+                "stats": [
+                    {
+                        "name": "cx_connect_fail"
+                    },
+                    {
+                        "name": "cx_total"
+                    },
+                    {
+                        "name": "rq_error"
+                    },
+                    {
+                        "name": "rq_success"
+                    },
+                    {
+                        "name": "rq_timeout"
+                    },
+                    {
+                        "name": "rq_total"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "cx_active"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "rq_active"
+                    }
+                ],
+                "healthStatus": {
+                    "edsHealthStatus": "HEALTHY"
+                },
+                "weight": 1
+            }
+        ]
+    },
+    {
+        "name": "outbound|9080|v1|productpage.default.svc.cluster.local",
+        "addedViaApi": true,
+        "hostStatuses": [
+            {
+                "address": {
+                    "socketAddress": {
+                        "address": "10.244.1.85",
                         "portValue": 9080
                     }
                 },
@@ -793,6 +977,52 @@
                     "socketAddress": {
                         "address": "10.244.2.74",
                         "portValue": 3000
+                    }
+                },
+                "stats": [
+                    {
+                        "name": "cx_connect_fail"
+                    },
+                    {
+                        "name": "cx_total"
+                    },
+                    {
+                        "name": "rq_error"
+                    },
+                    {
+                        "name": "rq_success"
+                    },
+                    {
+                        "name": "rq_timeout"
+                    },
+                    {
+                        "name": "rq_total"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "cx_active"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "rq_active"
+                    }
+                ],
+                "healthStatus": {
+                    "edsHealthStatus": "HEALTHY"
+                },
+                "weight": 1
+            }
+        ]
+    },
+    {
+        "name": "outbound|9080|v1|details.default.svc.cluster.local",
+        "addedViaApi": true,
+        "hostStatuses": [
+            {
+                "address": {
+                    "socketAddress": {
+                        "address": "10.244.2.79",
+                        "portValue": 9080
                     }
                 },
                 "stats": [
@@ -2192,6 +2422,52 @@
         ]
     },
     {
+        "name": "outbound|9080|v3|reviews.default.svc.cluster.local",
+        "addedViaApi": true,
+        "hostStatuses": [
+            {
+                "address": {
+                    "socketAddress": {
+                        "address": "10.244.1.84",
+                        "portValue": 9080
+                    }
+                },
+                "stats": [
+                    {
+                        "name": "cx_connect_fail"
+                    },
+                    {
+                        "name": "cx_total"
+                    },
+                    {
+                        "name": "rq_error"
+                    },
+                    {
+                        "name": "rq_success"
+                    },
+                    {
+                        "name": "rq_timeout"
+                    },
+                    {
+                        "name": "rq_total"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "cx_active"
+                    },
+                    {
+                        "type": "GAUGE",
+                        "name": "rq_active"
+                    }
+                ],
+                "healthStatus": {
+                    "edsHealthStatus": "HEALTHY"
+                },
+                "weight": 1
+            }
+        ]
+    },
+    {
         "name": "outbound|15014||istio-policy.istio-system.svc.cluster.local",
         "addedViaApi": true,
         "hostStatuses": [
@@ -2468,13 +2744,13 @@
         ]
     },
     {
-        "name": "outbound|9080||productpage.default.svc.cluster.local",
+        "name": "outbound|9080|v1|ratings.default.svc.cluster.local",
         "addedViaApi": true,
         "hostStatuses": [
             {
                 "address": {
                     "socketAddress": {
-                        "address": "10.244.1.85",
+                        "address": "10.244.2.80",
                         "portValue": 9080
                     }
                 },
