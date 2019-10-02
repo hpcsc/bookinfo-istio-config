@@ -1007,6 +1007,94 @@
                 "routes": [
                     {
                         "match": {
+                            "prefix": "/",
+                            "caseSensitive": true,
+                            "headers": [
+                                {
+                                    "name": "end-user",
+                                    "exactMatch": "jason"
+                                }
+                            ]
+                        },
+                        "route": {
+                            "cluster": "outbound|80|v1|ratings.default.svc.cluster.local",
+                            "timeout": "0s",
+                            "retryPolicy": {
+                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
+                                "numRetries": 2,
+                                "retryHostPredicate": [
+                                    {
+                                        "name": "envoy.retry_host_predicates.previous_hosts"
+                                    }
+                                ],
+                                "hostSelectionRetryMaxAttempts": "5",
+                                "retriableStatusCodes": [
+                                    503
+                                ]
+                            },
+                            "maxGrpcTimeout": "0s"
+                        },
+                        "metadata": {
+                            "filterMetadata": {
+                                "istio": {
+                                    "config": "/apis/networking/v1alpha3/namespaces/default/virtual-service/ratings"
+                                }
+                            }
+                        },
+                        "decorator": {
+                            "operation": "ratings.default.svc.cluster.local:80/*"
+                        },
+                        "typedPerFilterConfig": {
+                            "envoy.fault": {
+                                "@type": "type.googleapis.com/envoy.config.filter.http.fault.v2.HTTPFault",
+                                "delay": {
+                                    "fixedDelay": "7s",
+                                    "percentage": {
+                                        "numerator": 1000000,
+                                        "denominator": "MILLION"
+                                    }
+                                }
+                            },
+                            "mixer": {
+                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                "disableCheckCalls": true,
+                                "mixerAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "ratings.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "ratings"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/ratings"
+                                        }
+                                    }
+                                },
+                                "forwardAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "ratings.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "ratings"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/ratings"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "match": {
                             "prefix": "/"
                         },
                         "route": {
@@ -1769,6 +1857,94 @@
                     "10.97.88.100:9080"
                 ],
                 "routes": [
+                    {
+                        "match": {
+                            "prefix": "/",
+                            "caseSensitive": true,
+                            "headers": [
+                                {
+                                    "name": "end-user",
+                                    "exactMatch": "jason"
+                                }
+                            ]
+                        },
+                        "route": {
+                            "cluster": "outbound|9080|v1|ratings.default.svc.cluster.local",
+                            "timeout": "0s",
+                            "retryPolicy": {
+                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
+                                "numRetries": 2,
+                                "retryHostPredicate": [
+                                    {
+                                        "name": "envoy.retry_host_predicates.previous_hosts"
+                                    }
+                                ],
+                                "hostSelectionRetryMaxAttempts": "5",
+                                "retriableStatusCodes": [
+                                    503
+                                ]
+                            },
+                            "maxGrpcTimeout": "0s"
+                        },
+                        "metadata": {
+                            "filterMetadata": {
+                                "istio": {
+                                    "config": "/apis/networking/v1alpha3/namespaces/default/virtual-service/ratings"
+                                }
+                            }
+                        },
+                        "decorator": {
+                            "operation": "ratings.default.svc.cluster.local:9080/*"
+                        },
+                        "typedPerFilterConfig": {
+                            "envoy.fault": {
+                                "@type": "type.googleapis.com/envoy.config.filter.http.fault.v2.HTTPFault",
+                                "delay": {
+                                    "fixedDelay": "7s",
+                                    "percentage": {
+                                        "numerator": 1000000,
+                                        "denominator": "MILLION"
+                                    }
+                                }
+                            },
+                            "mixer": {
+                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                "disableCheckCalls": true,
+                                "mixerAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "ratings.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "ratings"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/ratings"
+                                        }
+                                    }
+                                },
+                                "forwardAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "ratings.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "ratings"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/ratings"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     {
                         "match": {
                             "prefix": "/"
