@@ -865,7 +865,7 @@
                             "prefix": "/"
                         },
                         "route": {
-                            "cluster": "outbound|9080|v3|reviews.default.svc.cluster.local",
+                            "cluster": "outbound|9080|v1|reviews.default.svc.cluster.local",
                             "timeout": "0s",
                             "retryPolicy": {
                                 "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
@@ -2040,7 +2040,7 @@
                             "prefix": "/"
                         },
                         "route": {
-                            "cluster": "outbound|80|v3|reviews.default.svc.cluster.local",
+                            "cluster": "outbound|80|v1|reviews.default.svc.cluster.local",
                             "timeout": "0s",
                             "retryPolicy": {
                                 "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
