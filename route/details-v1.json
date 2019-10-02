@@ -865,7 +865,94 @@
                             "prefix": "/"
                         },
                         "route": {
-                            "cluster": "outbound|9080|v1|reviews.default.svc.cluster.local",
+                            "weightedClusters": {
+                                "clusters": [
+                                    {
+                                        "name": "outbound|9080|v1|reviews.default.svc.cluster.local",
+                                        "weight": 50,
+                                        "typedPerFilterConfig": {
+                                            "mixer": {
+                                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                                "disableCheckCalls": true,
+                                                "mixerAttributes": {
+                                                    "attributes": {
+                                                        "destination.service.host": {
+                                                            "stringValue": "reviews.default.svc.cluster.local"
+                                                        },
+                                                        "destination.service.name": {
+                                                            "stringValue": "reviews"
+                                                        },
+                                                        "destination.service.namespace": {
+                                                            "stringValue": "default"
+                                                        },
+                                                        "destination.service.uid": {
+                                                            "stringValue": "istio://default/services/reviews"
+                                                        }
+                                                    }
+                                                },
+                                                "forwardAttributes": {
+                                                    "attributes": {
+                                                        "destination.service.host": {
+                                                            "stringValue": "reviews.default.svc.cluster.local"
+                                                        },
+                                                        "destination.service.name": {
+                                                            "stringValue": "reviews"
+                                                        },
+                                                        "destination.service.namespace": {
+                                                            "stringValue": "default"
+                                                        },
+                                                        "destination.service.uid": {
+                                                            "stringValue": "istio://default/services/reviews"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "outbound|9080|v3|reviews.default.svc.cluster.local",
+                                        "weight": 50,
+                                        "typedPerFilterConfig": {
+                                            "mixer": {
+                                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                                "disableCheckCalls": true,
+                                                "mixerAttributes": {
+                                                    "attributes": {
+                                                        "destination.service.host": {
+                                                            "stringValue": "reviews.default.svc.cluster.local"
+                                                        },
+                                                        "destination.service.name": {
+                                                            "stringValue": "reviews"
+                                                        },
+                                                        "destination.service.namespace": {
+                                                            "stringValue": "default"
+                                                        },
+                                                        "destination.service.uid": {
+                                                            "stringValue": "istio://default/services/reviews"
+                                                        }
+                                                    }
+                                                },
+                                                "forwardAttributes": {
+                                                    "attributes": {
+                                                        "destination.service.host": {
+                                                            "stringValue": "reviews.default.svc.cluster.local"
+                                                        },
+                                                        "destination.service.name": {
+                                                            "stringValue": "reviews"
+                                                        },
+                                                        "destination.service.namespace": {
+                                                            "stringValue": "default"
+                                                        },
+                                                        "destination.service.uid": {
+                                                            "stringValue": "istio://default/services/reviews"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
                             "timeout": "0s",
                             "retryPolicy": {
                                 "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
@@ -890,44 +977,12 @@
                             }
                         },
                         "decorator": {
-                            "operation": "reviews.default.svc.cluster.local:9080/*"
+                            "operation": "reviews:9080/*"
                         },
                         "typedPerFilterConfig": {
                             "mixer": {
                                 "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
-                                "disableCheckCalls": true,
-                                "mixerAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "reviews.default.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "reviews"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "default"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://default/services/reviews"
-                                        }
-                                    }
-                                },
-                                "forwardAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "reviews.default.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "reviews"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "default"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://default/services/reviews"
-                                        }
-                                    }
-                                }
+                                "disableCheckCalls": true
                             }
                         }
                     }
@@ -2040,7 +2095,94 @@
                             "prefix": "/"
                         },
                         "route": {
-                            "cluster": "outbound|80|v1|reviews.default.svc.cluster.local",
+                            "weightedClusters": {
+                                "clusters": [
+                                    {
+                                        "name": "outbound|80|v1|reviews.default.svc.cluster.local",
+                                        "weight": 50,
+                                        "typedPerFilterConfig": {
+                                            "mixer": {
+                                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                                "disableCheckCalls": true,
+                                                "mixerAttributes": {
+                                                    "attributes": {
+                                                        "destination.service.host": {
+                                                            "stringValue": "reviews.default.svc.cluster.local"
+                                                        },
+                                                        "destination.service.name": {
+                                                            "stringValue": "reviews"
+                                                        },
+                                                        "destination.service.namespace": {
+                                                            "stringValue": "default"
+                                                        },
+                                                        "destination.service.uid": {
+                                                            "stringValue": "istio://default/services/reviews"
+                                                        }
+                                                    }
+                                                },
+                                                "forwardAttributes": {
+                                                    "attributes": {
+                                                        "destination.service.host": {
+                                                            "stringValue": "reviews.default.svc.cluster.local"
+                                                        },
+                                                        "destination.service.name": {
+                                                            "stringValue": "reviews"
+                                                        },
+                                                        "destination.service.namespace": {
+                                                            "stringValue": "default"
+                                                        },
+                                                        "destination.service.uid": {
+                                                            "stringValue": "istio://default/services/reviews"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "outbound|80|v3|reviews.default.svc.cluster.local",
+                                        "weight": 50,
+                                        "typedPerFilterConfig": {
+                                            "mixer": {
+                                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                                "disableCheckCalls": true,
+                                                "mixerAttributes": {
+                                                    "attributes": {
+                                                        "destination.service.host": {
+                                                            "stringValue": "reviews.default.svc.cluster.local"
+                                                        },
+                                                        "destination.service.name": {
+                                                            "stringValue": "reviews"
+                                                        },
+                                                        "destination.service.namespace": {
+                                                            "stringValue": "default"
+                                                        },
+                                                        "destination.service.uid": {
+                                                            "stringValue": "istio://default/services/reviews"
+                                                        }
+                                                    }
+                                                },
+                                                "forwardAttributes": {
+                                                    "attributes": {
+                                                        "destination.service.host": {
+                                                            "stringValue": "reviews.default.svc.cluster.local"
+                                                        },
+                                                        "destination.service.name": {
+                                                            "stringValue": "reviews"
+                                                        },
+                                                        "destination.service.namespace": {
+                                                            "stringValue": "default"
+                                                        },
+                                                        "destination.service.uid": {
+                                                            "stringValue": "istio://default/services/reviews"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
                             "timeout": "0s",
                             "retryPolicy": {
                                 "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
@@ -2065,44 +2207,12 @@
                             }
                         },
                         "decorator": {
-                            "operation": "reviews.default.svc.cluster.local:80/*"
+                            "operation": "reviews:80/*"
                         },
                         "typedPerFilterConfig": {
                             "mixer": {
                                 "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
-                                "disableCheckCalls": true,
-                                "mixerAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "reviews.default.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "reviews"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "default"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://default/services/reviews"
-                                        }
-                                    }
-                                },
-                                "forwardAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "reviews.default.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "reviews"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "default"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://default/services/reviews"
-                                        }
-                                    }
-                                }
+                                "disableCheckCalls": true
                             }
                         }
                     }

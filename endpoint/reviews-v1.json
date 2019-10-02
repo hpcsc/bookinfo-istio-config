@@ -21,14 +21,14 @@
                         "name": "rq_error"
                     },
                     {
-                        "value": "250",
+                        "value": "254",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "250",
+                        "value": "254",
                         "name": "rq_total"
                     },
                     {
