@@ -1891,6 +1891,86 @@
         "name": "80",
         "virtualHosts": [
             {
+                "name": "details.default.svc.cluster.local:80",
+                "domains": [
+                    "details.default.svc.cluster.local",
+                    "details.default.svc.cluster.local:80"
+                ],
+                "routes": [
+                    {
+                        "match": {
+                            "prefix": "/"
+                        },
+                        "route": {
+                            "cluster": "outbound|80|v1|details.default.svc.cluster.local",
+                            "timeout": "0s",
+                            "retryPolicy": {
+                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
+                                "numRetries": 2,
+                                "retryHostPredicate": [
+                                    {
+                                        "name": "envoy.retry_host_predicates.previous_hosts"
+                                    }
+                                ],
+                                "hostSelectionRetryMaxAttempts": "5",
+                                "retriableStatusCodes": [
+                                    503
+                                ]
+                            },
+                            "maxGrpcTimeout": "0s"
+                        },
+                        "metadata": {
+                            "filterMetadata": {
+                                "istio": {
+                                    "config": "/apis/networking/v1alpha3/namespaces/default/virtual-service/details"
+                                }
+                            }
+                        },
+                        "decorator": {
+                            "operation": "details.default.svc.cluster.local:80/*"
+                        },
+                        "typedPerFilterConfig": {
+                            "mixer": {
+                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                "disableCheckCalls": true,
+                                "mixerAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "details.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "details"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/details"
+                                        }
+                                    }
+                                },
+                                "forwardAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "details.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "details"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/details"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            {
                 "name": "istio-egressgateway.istio-system.svc.cluster.local:80",
                 "domains": [
                     "istio-egressgateway.istio-system.svc.cluster.local",
@@ -2046,6 +2126,246 @@
                                         },
                                         "destination.service.uid": {
                                             "stringValue": "istio://istio-system/services/istio-ingressgateway"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "productpage.default.svc.cluster.local:80",
+                "domains": [
+                    "productpage.default.svc.cluster.local",
+                    "productpage.default.svc.cluster.local:80"
+                ],
+                "routes": [
+                    {
+                        "match": {
+                            "prefix": "/"
+                        },
+                        "route": {
+                            "cluster": "outbound|80|v1|productpage.default.svc.cluster.local",
+                            "timeout": "0s",
+                            "retryPolicy": {
+                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
+                                "numRetries": 2,
+                                "retryHostPredicate": [
+                                    {
+                                        "name": "envoy.retry_host_predicates.previous_hosts"
+                                    }
+                                ],
+                                "hostSelectionRetryMaxAttempts": "5",
+                                "retriableStatusCodes": [
+                                    503
+                                ]
+                            },
+                            "maxGrpcTimeout": "0s"
+                        },
+                        "metadata": {
+                            "filterMetadata": {
+                                "istio": {
+                                    "config": "/apis/networking/v1alpha3/namespaces/default/virtual-service/productpage"
+                                }
+                            }
+                        },
+                        "decorator": {
+                            "operation": "productpage.default.svc.cluster.local:80/*"
+                        },
+                        "typedPerFilterConfig": {
+                            "mixer": {
+                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                "disableCheckCalls": true,
+                                "mixerAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "productpage.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "productpage"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/productpage"
+                                        }
+                                    }
+                                },
+                                "forwardAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "productpage.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "productpage"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/productpage"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "ratings.default.svc.cluster.local:80",
+                "domains": [
+                    "ratings.default.svc.cluster.local",
+                    "ratings.default.svc.cluster.local:80"
+                ],
+                "routes": [
+                    {
+                        "match": {
+                            "prefix": "/"
+                        },
+                        "route": {
+                            "cluster": "outbound|80|v1|ratings.default.svc.cluster.local",
+                            "timeout": "0s",
+                            "retryPolicy": {
+                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
+                                "numRetries": 2,
+                                "retryHostPredicate": [
+                                    {
+                                        "name": "envoy.retry_host_predicates.previous_hosts"
+                                    }
+                                ],
+                                "hostSelectionRetryMaxAttempts": "5",
+                                "retriableStatusCodes": [
+                                    503
+                                ]
+                            },
+                            "maxGrpcTimeout": "0s"
+                        },
+                        "metadata": {
+                            "filterMetadata": {
+                                "istio": {
+                                    "config": "/apis/networking/v1alpha3/namespaces/default/virtual-service/ratings"
+                                }
+                            }
+                        },
+                        "decorator": {
+                            "operation": "ratings.default.svc.cluster.local:80/*"
+                        },
+                        "typedPerFilterConfig": {
+                            "mixer": {
+                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                "disableCheckCalls": true,
+                                "mixerAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "ratings.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "ratings"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/ratings"
+                                        }
+                                    }
+                                },
+                                "forwardAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "ratings.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "ratings"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/ratings"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "reviews.default.svc.cluster.local:80",
+                "domains": [
+                    "reviews.default.svc.cluster.local",
+                    "reviews.default.svc.cluster.local:80"
+                ],
+                "routes": [
+                    {
+                        "match": {
+                            "prefix": "/"
+                        },
+                        "route": {
+                            "cluster": "outbound|80|v1|reviews.default.svc.cluster.local",
+                            "timeout": "0s",
+                            "retryPolicy": {
+                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
+                                "numRetries": 2,
+                                "retryHostPredicate": [
+                                    {
+                                        "name": "envoy.retry_host_predicates.previous_hosts"
+                                    }
+                                ],
+                                "hostSelectionRetryMaxAttempts": "5",
+                                "retriableStatusCodes": [
+                                    503
+                                ]
+                            },
+                            "maxGrpcTimeout": "0s"
+                        },
+                        "metadata": {
+                            "filterMetadata": {
+                                "istio": {
+                                    "config": "/apis/networking/v1alpha3/namespaces/default/virtual-service/reviews"
+                                }
+                            }
+                        },
+                        "decorator": {
+                            "operation": "reviews.default.svc.cluster.local:80/*"
+                        },
+                        "typedPerFilterConfig": {
+                            "mixer": {
+                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                "disableCheckCalls": true,
+                                "mixerAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "reviews.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "reviews"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/reviews"
+                                        }
+                                    }
+                                },
+                                "forwardAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "reviews.default.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "reviews"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "default"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://default/services/reviews"
                                         }
                                     }
                                 }
@@ -2702,12 +3022,11 @@
                 ],
                 "routes": [
                     {
-                        "name": "default",
                         "match": {
                             "prefix": "/"
                         },
                         "route": {
-                            "cluster": "outbound|9080||details.default.svc.cluster.local",
+                            "cluster": "outbound|9080|v1|details.default.svc.cluster.local",
                             "timeout": "0s",
                             "retryPolicy": {
                                 "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
@@ -2723,6 +3042,13 @@
                                 ]
                             },
                             "maxGrpcTimeout": "0s"
+                        },
+                        "metadata": {
+                            "filterMetadata": {
+                                "istio": {
+                                    "config": "/apis/networking/v1alpha3/namespaces/default/virtual-service/details"
+                                }
+                            }
                         },
                         "decorator": {
                             "operation": "details.default.svc.cluster.local:9080/*"
@@ -2786,12 +3112,11 @@
                 ],
                 "routes": [
                     {
-                        "name": "default",
                         "match": {
                             "prefix": "/"
                         },
                         "route": {
-                            "cluster": "outbound|9080||productpage.default.svc.cluster.local",
+                            "cluster": "outbound|9080|v1|productpage.default.svc.cluster.local",
                             "timeout": "0s",
                             "retryPolicy": {
                                 "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
@@ -2807,6 +3132,13 @@
                                 ]
                             },
                             "maxGrpcTimeout": "0s"
+                        },
+                        "metadata": {
+                            "filterMetadata": {
+                                "istio": {
+                                    "config": "/apis/networking/v1alpha3/namespaces/default/virtual-service/productpage"
+                                }
+                            }
                         },
                         "decorator": {
                             "operation": "productpage.default.svc.cluster.local:9080/*"
@@ -2870,12 +3202,11 @@
                 ],
                 "routes": [
                     {
-                        "name": "default",
                         "match": {
                             "prefix": "/"
                         },
                         "route": {
-                            "cluster": "outbound|9080||ratings.default.svc.cluster.local",
+                            "cluster": "outbound|9080|v1|ratings.default.svc.cluster.local",
                             "timeout": "0s",
                             "retryPolicy": {
                                 "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
@@ -2891,6 +3222,13 @@
                                 ]
                             },
                             "maxGrpcTimeout": "0s"
+                        },
+                        "metadata": {
+                            "filterMetadata": {
+                                "istio": {
+                                    "config": "/apis/networking/v1alpha3/namespaces/default/virtual-service/ratings"
+                                }
+                            }
                         },
                         "decorator": {
                             "operation": "ratings.default.svc.cluster.local:9080/*"
@@ -2954,12 +3292,11 @@
                 ],
                 "routes": [
                     {
-                        "name": "default",
                         "match": {
                             "prefix": "/"
                         },
                         "route": {
-                            "cluster": "outbound|9080||reviews.default.svc.cluster.local",
+                            "cluster": "outbound|9080|v1|reviews.default.svc.cluster.local",
                             "timeout": "0s",
                             "retryPolicy": {
                                 "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
@@ -2975,6 +3312,13 @@
                                 ]
                             },
                             "maxGrpcTimeout": "0s"
+                        },
+                        "metadata": {
+                            "filterMetadata": {
+                                "istio": {
+                                    "config": "/apis/networking/v1alpha3/namespaces/default/virtual-service/reviews"
+                                }
+                            }
                         },
                         "decorator": {
                             "operation": "reviews.default.svc.cluster.local:9080/*"
